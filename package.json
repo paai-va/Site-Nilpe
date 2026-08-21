@@ -1,0 +1,13 @@
+{
+  "name": "nilpe-candys",
+  "version": "1.0.0",
+  "description": "Site da doceria Nilpe Candys",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

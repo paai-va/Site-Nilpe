@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilpe Candys - Doceria Artesanal</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#home" class="logo">
+        <div class="logo-icone">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21c-4.5-2.5-8-6.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 4.5-3.5 8.5-8 11z"/>
+            <path d="M9 10c1.5-1 3-1 4.5 0"/>
+          </svg>
+        </div>
+        <div class="logo-textos">
+          <span class="logo-text">Nilpe Candys</span>
+          <span class="logo-sub">Doceria Artesanal</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#home" class="nav-link ativo">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="btn-carrinho" onclick="abrirCarrinho()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="btn-carrinho-text">Carrinho</span>
+        <span id="contador-carrinho" class="contador">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO / HOME -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-conteudo">
+      <p class="hero-subtitulo">Doceria Artesanal desde 2015</p>
+      <h1>Doces que transformam<br>momentos em memórias</h1>
+      <p class="hero-texto">Receitas artesanais preparadas com ingredientes selecionados e muito carinho em cada detalhe.</p>
+      <div class="hero-botoes">
+        <a href="#cardapio" class="btn-principal">Ver Cardápio</a>
+        <a href="#sobre" class="btn-secundario">Nossa História</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Role para descobrir</span>
+      <div class="scroll-linha"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="sobre">
+    <div class="sobre-grid">
+      <div class="sobre-imagens">
+        <img src="https://images.pexels.com/photos/15488994/pexels-photo-15488994.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Vitrine de doces coloridos" class="sobre-img-1">
+        <img src="https://images.pexels.com/photos/8477975/pexels-photo-8477975.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Chef preparando sobremesa" class="sobre-img-2">
+      </div>
+      <div class="sobre-texto">
+        <p class="secao-rotulo">Nossa História</p>
+        <h2>Uma paixão que começou na cozinha de casa</h2>
+        <p>A Nilpe Candys nasceu do amor pela confeitaria artesanal. O que começou como um hobby em casa, hoje é uma doceria reconhecida pela qualidade e sabor inconfundíveis.</p>
+        <p>Trabalhamos com ingredientes frescos e selecionados, preparando cada doce com dedicação e cuidado. Do brigadeiro ao tiramisu, cada receita foi aperfeiçoada ao longo dos anos.</p>
+        <div class="sobre-stats">
+          <div class="stat">
+            <span class="stat-numero">10+</span>
+            <span class="stat-rotulo">Anos de experiência</span>
+          </div>
+          <div class="stat">
+            <span class="stat-numero">50+</span>
+            <span class="stat-rotulo">Tipos de doces</span>
+          </div>
+          <div class="stat">
+            <span class="stat-numero">5mil+</span>
+            <span class="stat-rotulo">Clientes felizes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section id="cardapio" class="cardapio">
+    <div class="cardapio-topo">
+      <p class="secao-rotulo">Nosso Cardápio</p>
+      <h2>Escolha seus doces favoritos</h2>
+      <p class="cardapio-descricao">Todos os doces são preparados fresquinhos, todos os dias, com ingredientes de primeira qualidade.</p>
+    </div>
+
+    <div class="filtros" id="filtros">
+      <button class="filtro-btn ativo" onclick="filtrarDoces('todos', this)">Todos</button>
+      <button class="filtro-btn" onclick="filtrarDoces('caseiros', this)">Doces Caseiros</button>
+      <button class="filtro-btn" onclick="filtrarDoces('bolos', this)">Bolos</button>
+      <button class="filtro-btn" onclick="filtrarDoces('tortas', this)">Tortas</button>
+      <button class="filtro-btn" onclick="filtrarDoces('gelados', this)">Gelados</button>
+      <button class="filtro-btn" onclick="filtrarDoces('especiais', this)">Especiais</button>
+    </div>
+
+    <div class="lista-doces" id="lista-doces">
+      <!-- Os doces são criados pelo JavaScript -->
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section class="avaliacoes">
+    <div class="avaliacoes-topo">
+      <p class="secao-rotulo">Avaliações</p>
+      <h2>O que dizem nossos clientes</h2>
+    </div>
+    <div class="avaliacoes-grid">
+      <div class="avaliacao-card">
+        <div class="estrelas">★★★★★</div>
+        <p>"Os brigadeiros são os melhores que já comi! Sabor caseiro de verdade, não tem comparação."</p>
+        <div class="avaliacao-pessoa">
+          <div class="avatar">M</div>
+          <div>
+            <h4>Mariana Silva</h4>
+            <span>Cliente desde 2020</span>
+          </div>
+        </div>
+      </div>
+      <div class="avaliacao-card">
+        <div class="estrelas">★★★★★</div>
+        <p>"Encomendei os doces do aniversário da minha filha e foi um sucesso! Todos adoraram."</p>
+        <div class="avaliacao-pessoa">
+          <div class="avatar">J</div>
+          <div>
+            <h4>João Pereira</h4>
+            <span>Cliente desde 2021</span>
+          </div>
+        </div>
+      </div>
+      <div class="avaliacao-card">
+        <div class="estrelas">★★★★★</div>
+        <p>"O cheesecake é divino! Atendimento excelente e entrega rápida. Recomendo demais!"</p>
+        <div class="avaliacao-pessoa">
+          <div class="avatar">A</div>
+          <div>
+            <h4>Ana Costa</h4>
+            <span>Cliente desde 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contato">
+    <div class="contato-grid">
+      <div class="contato-info">
+        <p class="secao-rotulo">Fale Conosco</p>
+        <h2>Estamos aqui para você</h2>
+        <p class="contato-descricao">Tire dúvidas, faça encomendas ou apenas venha nos visitar. Será um prazer atendê-lo!</p>
+        <div class="contato-lista">
+          <div class="contato-item">
+            <div class="contato-icone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Endereço</h4>
+              <p>Rua das Flores, 123 - Centro</p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Telefone / WhatsApp</h4>
+              <p>(11) 4002-8922</p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>Horário</h4>
+              <p>Seg a Sáb: 9h às 19h</p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p>contato@nilpecandys.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="redes-sociais">
+          <a href="#" class="rede-social">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.91h-2.33v7.03c4.78-.79 8.44-4.94 8.44-9.94 0-5.53-4.5-10.02-10-10.02z"/></svg>
+          </a>
+          <a href="#" class="rede-social">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 5.84a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 6.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2zm4.85-6.78a.93.93 0 1 0 0 1.86.93.93 0 0 0 0-1.86z"/></svg>
+          </a>
+          <a href="#" class="rede-social">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 3H4.4C3.6 3 3 3.6 3 4.4v15.2c0 .8.6 1.4 1.4 1.4h15.2c.8 0 1.4-.6 1.4-1.4V4.4c0-.8-.6-1.4-1.4-1.4zM8.5 18.3H5.7V9.3h2.8v9zm-1.4-10.3a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2zm11.2 10.3h-2.8v-4.4c0-1 0-2.4-1.5-2.4s-1.7 1.1-1.7 2.3v4.5h-2.8V9.3h2.7v1.2h.1c.4-.7 1.3-1.5 2.7-1.5 2.9 0 3.4 1.9 3.4 4.3v5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <form class="form-contato" onsubmit="enviarMensagem(event)">
+        <h3>Mande uma mensagem</h3>
+        <div class="form-linha">
+          <input type="text" placeholder="Seu nome" required>
+          <input type="tel" placeholder="Telefone">
+        </div>
+        <input type="email" placeholder="Seu email" required>
+        <textarea placeholder="Escreva sua mensagem aqui..." rows="5" required></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="rodape-grid">
+      <div class="rodape-coluna">
+        <a href="#home" class="logo logo-footer">
+          <div class="logo-icone">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21c-4.5-2.5-8-6.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 4.5-3.5 8.5-8 11z"/>
+              <path d="M9 10c1.5-1 3-1 4.5 0"/>
+            </svg>
+          </div>
+          <div class="logo-textos">
+            <span class="logo-text">Nilpe Candys</span>
+            <span class="logo-sub">Doceria Artesanal</span>
+          </div>
+        </a>
+        <p>Doceria artesanal com receitas preparadas com amor desde 2015.</p>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Contato</h4>
+        <ul>
+          <li>Rua das Flores, 123</li>
+          <li>(11) 4002-8922</li>
+          <li>contato@nilpecandys.com</li>
+          <li>Seg a Sáb: 9h às 19h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape-base">
+      <p>Nilpe Candys &copy; 2026 - Feito com amor e muito açúcar</p>
+    </div>
+  </footer>
+
+  <!-- CARRINHO -->
+  <div class="carrinho-fundo" id="carrinho-fundo" onclick="fecharCarrinho(event)">
+    <div class="carrinho-janela">
+      <div class="carrinho-topo">
+        <h2>Seu Carrinho</h2>
+        <button class="btn-fechar" onclick="fecharCarrinho()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div id="itens-carrinho" class="itens-carrinho"></div>
+      <div class="carrinho-rodape">
+        <div class="carrinho-total">
+          <span>Total</span>
+          <span id="total-carrinho">R$ 0,00</span>
+        </div>
+        <button class="btn-pagamento" onclick="abrirPagamento()">Ir para Pagamento</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGAMENTO -->
+  <div class="pagamento-fundo" id="pagamento-fundo" onclick="fecharPagamento(event)">
+    <div class="pagamento-janela">
+      <div class="carrinho-topo">
+        <h2>Finalizar Pedido</h2>
+        <button class="btn-fechar" onclick="fecharPagamento()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <form class="form-pagamento" onsubmit="finalizarPedido(event)">
+        <h3>Dados de Entrega</h3>
+        <input type="text" placeholder="Nome completo" required>
+        <input type="text" placeholder="Endereço completo" required>
+        <div class="form-linha">
+          <input type="text" placeholder="Telefone" required>
+          <input type="text" placeholder="CEP">
+        </div>
+
+        <h3>Forma de Pagamento</h3>
+        <div class="opcoes-pagamento">
+          <label class="opcao-pagamento">
+            <input type="radio" name="pagamento" value="cartao" checked>
+            <div class="opcao-conteudo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <span>Cartão de Crédito</span>
+            </div>
+          </label>
+          <label class="opcao-pagamento">
+            <input type="radio" name="pagamento" value="pix">
+            <div class="opcao-conteudo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <span>Pix</span>
+            </div>
+          </label>
+          <label class="opcao-pagamento">
+            <input type="radio" name="pagamento" value="dinheiro">
+            <div class="opcao-conteudo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span>Dinheiro na entrega</span>
+            </div>
+          </label>
+        </div>
+
+        <div id="campo-cartao" class="campo-cartao mostrar">
+          <input type="text" placeholder="Número do cartão">
+          <input type="text" placeholder="Nome no cartão">
+          <div class="form-linha">
+            <input type="text" placeholder="Validade (MM/AA)">
+            <input type="text" placeholder="CVV">
+          </div>
+        </div>
+
+        <div class="resumo-pagamento">
+          <span>Total a pagar</span>
+          <span id="total-pagamento">R$ 0,00</span>
+        </div>
+
+        <button type="submit" class="btn-finalizar">Confirmar Pedido</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Mensagem de sucesso -->
+  <div class="msg-sucesso" id="msg-sucesso">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <p id="msg-sucesso-texto">Pedido realizado com sucesso! Obrigado!</p>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
